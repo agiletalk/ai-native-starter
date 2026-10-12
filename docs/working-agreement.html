@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>일하는 방식</title>
+<link rel="stylesheet" href="assets/doc.css">
+</head>
+<body>
+<main>
+  <h1>일하는 방식</h1>
+  <p class="meta"><span>최종 수정 YYYY-MM-DD</span></p>
+
+  <p class="note">사람과 AI가 같이 따르는 규칙이다. README와 <code>AGENTS.md</code>는 이 문서를 가리키기만 한다.
+  규칙을 바꿀 때는 여기만 고친다.</p>
+
+  <h2>진실은 한 군데에만</h2>
+  <ul>
+    <li>같은 사실을 두 곳에 쓰지 않는다. 이미 다른 곳에 있으면 복사하지 말고 링크를 건다.</li>
+    <li>문서 사이에 모순이 보이면 둘 다 고쳐 맞추지 말고 하나를 지운다.</li>
+    <li>레포가 여러 개인 프로젝트라면 문서가 사는 레포를 하나로 정한다. 다른 레포에는 링크만 둔다.</li>
+  </ul>
+
+  <h2>무엇을 어디에 쓰나</h2>
+  <table>
+    <thead><tr><th>내용</th><th>위치</th></tr></thead>
+    <tbody>
+      <tr><td>되돌리기 어려운 결정 (결정 / 이유 / 버린 것)</td><td><code>docs/adr/</code> — <code>scripts/new-adr.py &lt;slug&gt; "&lt;제목&gt;"</code>으로 만든다</td></tr>
+      <tr><td>큰 기능의 무엇·왜</td><td><code>docs/specs/</code></td></tr>
+      <tr><td>역할과 경계</td><td><a href="roles.html">roles.html</a></td></tr>
+      <tr><td>일하는 규칙</td><td>이 문서</td></tr>
+      <tr><td>진행 상황, 할 일</td><td>문서에 쓰지 않는다. 이슈 트래커를 쓴다</td></tr>
+    </tbody>
+  </table>
+
+  <h2>초안과 논의</h2>
+  <ul>
+    <li>확정되지 않은 내용도 먼저 올린다. ADR·스펙 초안은 <code>status: draft</code>로 PR을 연다.</li>
+    <li>의견은 PR 리뷰 댓글로 주고받는다. 합의되면 <code>accepted</code>로 바꾸고 머지한다.</li>
+    <li>확정된 ADR은 고치지 않는다. 번복할 때는 새 ADR을 만들고 기존 문서를 <code>superseded</code>로 표시해 새 문서를 링크한다.</li>
+  </ul>
+
+  <h2>하루 흐름</h2>
+  <table>
+    <tbody>
+      <tr><th>아침</th><td>회의 없이 문서를 10분 읽는다. 어제 바뀐 것은 <code>scripts/morning.sh</code>(월요일은 <code>scripts/morning.sh 3</code>)로 본다.</td></tr>
+      <tr><th>낮</th><td>각자 작업한다. 디자이너는 화면을 고쳐 바로 올리고, PO는 문구와 흐름을 다듬고, 개발자는 그날 가장 어려운 문제를 맡는다.
+        서로 자주 묻지 않는다. 문서에 없는 일이 생길 때만 대화하고, <strong>결론은 반드시 문서에 넣는다.</strong></td></tr>
+      <tr><th>오후</th><td>리뷰. 좋고 나쁨이 아니라 문서와 다른지만 본다.</td></tr>
+      <tr><th>퇴근 전</th><td>오늘 바꾼 것을 올린다. 그게 다음 날 아침 읽을 거리가 된다.</td></tr>
+      <tr><th>주 1회</th><td>큰 그림을 보는 회의. 문서를 띄워 놓고 한다.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>리뷰 규칙</h2>
+  <ul>
+    <li>취향 의견은 내지 않는다. 기준은 문서에 있다.</li>
+    <li>문서와 다르면 코드를 고치거나, 문서를 먼저 고친다.</li>
+    <li>리뷰에서 나온 결론은 문서에 반영한다.</li>
+  </ul>
+</main>
+</body>
+</html>
