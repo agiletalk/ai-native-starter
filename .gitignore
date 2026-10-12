@@ -1,0 +1,5 @@
+.DS_Store
+
+# 내부 인수인계 문서는 커밋하지 않는다
+HANDOFF-*.md
+docs/HANDOFF-*.md
